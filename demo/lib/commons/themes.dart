@@ -1,4 +1,4 @@
-import 'package:demo/extensions/colour.dart';
+import 'package:assignment/extensions/colour.dart';
 import 'package:flutter/material.dart';
 
 ThemeData primaryTheme = ThemeData(

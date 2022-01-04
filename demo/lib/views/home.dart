@@ -1,9 +1,9 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key? key, required this.title}) : super(key: key);
-
-  final String title;
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -14,31 +14,32 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text('Home',
+            style: Theme.of(context).appBarTheme.textTheme!.headline4),
       ),
       body: Center(
           child: Container(
-        padding: EdgeInsets.only(top: 55),
+        padding: const EdgeInsets.only(top: 55),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: <Widget>[
             Container(
-              padding: EdgeInsets.only(top: 15, bottom: 50),
-              child: Text(
+              padding: const EdgeInsets.only(top: 15, bottom: 50),
+              child: const Text(
                 'Home',
               ),
             ),
             FlatButton(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18.0),
-                  side: BorderSide(color: Colors.blue)),
+                  side: const BorderSide(color: Colors.blue)),
               color: Colors.white,
               textColor: Colors.blue,
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               onPressed: () {
                 Navigator.pushNamed(context, '/users');
               },
-              child: Text(
+              child: const Text(
                 "Users",
                 style: TextStyle(
                   fontSize: 14.0,
@@ -48,10 +49,10 @@ class _HomePageState extends State<HomePage> {
             FlatButton(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18.0),
-                  side: BorderSide(color: Colors.blue)),
+                  side: const BorderSide(color: Colors.blue)),
               color: Colors.white,
               textColor: Colors.blue,
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               onPressed: () {
                 Navigator.of(context).pushNamed(
                   '/profile',
@@ -59,7 +60,7 @@ class _HomePageState extends State<HomePage> {
                       "Second Page", //This is really importan. Here you should pass every parameter as arguments
                 );
               },
-              child: Text(
+              child: const Text(
                 "Profile",
                 style: TextStyle(
                   fontSize: 14.0,

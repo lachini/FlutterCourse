@@ -1,4 +1,4 @@
-import 'package:demo/views/home.dart';
+import 'package:assignment/views/home.dart';
 import 'package:flutter/material.dart';
 
 import 'commons/route_generator.dart';
@@ -10,24 +10,27 @@ void main() async {
   await EasyLocalization.ensureInitialized();
   runApp(
     EasyLocalization(
-        supportedLocales: [Locale('en', 'US'), Locale('de', 'DE')],
+        supportedLocales: const [Locale('en', 'US'), Locale('de', 'DE')],
         path: 'assets/langs',
-        fallbackLocale: Locale('en', 'US'),
-        child: MyApp()),
+        fallbackLocale: const Locale('en', 'US'),
+        child: const MyApp()),
   );
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        theme: primaryTheme,
-        localizationsDelegates: context.localizationDelegates,
-        supportedLocales: context.supportedLocales,
-        locale: context.locale,
-        initialRoute: '/',
-        onGenerateRoute: RouteGenerator.generateRoute,
-        home: HomePage(title: "Home"));
+      title: 'Flutter Demo',
+      theme: primaryTheme,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute,
+      home: const HomePage(),
+    );
   }
 }
